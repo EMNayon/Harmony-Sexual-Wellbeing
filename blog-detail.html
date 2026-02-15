@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ED (ইরেক্টাইল ডিসফাংশন) - Harmony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #FF1A7C 0%, #3B5BDB 100%);
+        }
+
+        .gradient-secondary {
+            background: linear-gradient(135deg, #3B5BDB 0%, #00D4FF 100%);
+        }
+
+        .hero-wave {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="hidden md:block border-b text-xs py-2 bg-gray-50 text-gray-500">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <div class="flex space-x-3 border-r pr-4 border-gray-300">
+                    <a href="#" class="hover:text-brand-red"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-brand-red"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand-red"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-brand-red">About Us</a>
+                    <a href="#" class="hover:text-brand-red">Contact</a>
+                </div>
+            </div>
+            <div class="flex space-x-4 items-center">
+                <span id="current-date"
+                    class="text-[10px] uppercase tracking-wide border-r pr-4 border-gray-300 text-gray-600">
+                    Loading...
+                </span>
+
+                <div class="flex items-center space-x-3">
+
+
+                    <a href="subscribe.html"
+                        class="bg-black hover:bg-red-600 text-white px-4 py-1.5 rounded-full transition-colors duration-300 font-semibold text-[10px] uppercase">
+                        SUBSCRIBE
+                    </a>
+                </div>
+                <button onclick="openSearch()"
+                    class="pl-2 text-gray-400 hover:text-brand-red transition-all duration-300 transform hover:scale-110 focus:outline-none"
+                    title="Search">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header
+        class="py-4 md:py-6 border-b-4 border-double border-gray-200 bg-white relative z-30 transition-all duration-300">
+        <div id="header-container"
+            class="container mx-auto px-4 flex flex-col  justify-between items-center md:h-28 gap-4 md:gap-0 transition-all duration-500">
+            <div id=""
+                class="w-full md:w-1/3 flex justify-center md:justify-center transition-all duration-500 order-1">
+                <img src="Harmony-Sexual-Wellbeing-RGB.png" alt="Logo" class="w-40 md:w-56" />
+            </div>
+
+            <div
+                class="flex md:hidden w-full justify-between items-center px-2 mt-2 order-3 border-t pt-3 border-gray-100">
+                <span id="mobile-date" class="text-[10px] text-gray-500 uppercase"></span>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="bg-black hover:bg-red-700 text-white px-4 py-1.5 rounded-full transition-colors duration-300 font-semibold inline-block">
+                        SUBSCRIBE
+                    </a>
+                    <button onclick="toggleMenu()" class="text-brand-red text-xl">
+                        <svg fill="none" class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path
+                                d="M3.333 23.641v-2h13.039v2H3.333Zm0-6.526v-2h6.308v2H3.333Zm0-6.525v-2h6.308v2H3.333Zm23.929 13.077-5.16-5.121a5.86 5.86 0 0 1-1.66.844c-.599.193-1.208.29-1.827.29-1.67 0-3.094-.584-4.272-1.752-1.177-1.167-1.766-2.586-1.766-4.255 0-1.67.589-3.087 1.767-4.255 1.178-1.168 2.603-1.751 4.274-1.751 1.672 0 3.096.583 4.272 1.751 1.176 1.168 1.764 2.584 1.764 4.249 0 .619-.097 1.228-.29 1.827a5.51 5.51 0 0 1-.856 1.647l5.159 5.12-1.405 1.406Zm-8.647-5.988c1.122 0 2.076-.388 2.861-1.166.785-.778 1.178-1.725 1.178-2.84 0-1.115-.393-2.062-1.178-2.84-.785-.777-1.739-1.166-2.86-1.166-1.122 0-2.076.389-2.861 1.166-.785.778-1.178 1.725-1.178 2.84 0 1.115.393 2.062 1.178 2.84.785.777 1.739 1.166 2.86 1.166Z"
+                                fill="#0D0D0D"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="sticky-nav"
+        class="hidden md:block bg-white shadow-sm sticky top-0 z-40 transition-all duration-300 border-b border-transparent">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-14 lg:h-20">
+                <div id="sticky-logo" class="hidden opacity-0 transition-opacity duration-300">
+                    <a href="index.html">
+                        <img src="Harmony-Sexual-Wellbeing-RGB.png" alt="Logo" class="h-10 lg:h-16 w-auto" />
+                    </a>
+                </div>
+
+                <ul id="desktop-menu"
+                    class="flex flex-grow items-center justify-center space-x-4 lg:space-x-8 font-semibold text-xs lg:text-sm uppercase tracking-wide transition-all duration-300">
+                    <li>
+                        <a href="index.html" class="text-brand-red"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red font-bold transition">DE</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">PE</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">Causes</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">Diagnosis</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">Treatment</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red font-bold transition">Lifestyle</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">Relationships</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">Myths</a>
+                    </li>
+                    <li>
+                        <a href="category-page.html" class="hover:text-brand-red transition">FAQ</a>
+                    </li>
+
+                    <!-- <li class="lowercase">
+            <div class="relative group cursor-pointer w-40 lg:w-56" onclick="openSearch()">
+              <input type="text" placeholder="Search..." readonly
+                class="w-full bg-gray-100 border border-gray-200 rounded-lg py-1.5 px-3 focus:outline-none cursor-pointer text-xs">
+              <i class="fas fa-search absolute right-3 top-2 text-gray-400 group-hover:text-brand-red"></i>
+            </div>
+          </li> -->
+                </ul>
+
+                <div class="flex items-center gap-3">
+                    <a id="sticky-subscribe" href="subscribe.html"
+                        class="hidden bg-black hover:bg-red-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 font-semibold text-xs lg:text-sm">
+                        SUBSCRIBE
+                    </a>
+                    <!-- <a href="">Login</a> -->
+
+
+                    <button id="hamburger-btn" onclick="toggleMenu()"
+                        class="hidden text-2xl text-gray-700 hover:text-brand-red focus:outline-none">
+                        <svg fill="none" class="w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path
+                                d="M3.333 23.641v-2h13.039v2H3.333Zm0-6.526v-2h6.308v2H3.333Zm0-6.525v-2h6.308v2H3.333Zm23.929 13.077-5.16-5.121a5.86 5.86 0 0 1-1.66.844c-.599.193-1.208.29-1.827.29-1.67 0-3.094-.584-4.272-1.752-1.177-1.167-1.766-2.586-1.766-4.255 0-1.67.589-3.087 1.767-4.255 1.178-1.168 2.603-1.751 4.274-1.751 1.672 0 3.096.583 4.272 1.751 1.176 1.168 1.764 2.584 1.764 4.249 0 .619-.097 1.228-.29 1.827a5.51 5.51 0 0 1-.856 1.647l5.159 5.12-1.405 1.406Zm-8.647-5.988c1.122 0 2.076-.388 2.861-1.166.785-.778 1.178-1.725 1.178-2.84 0-1.115-.393-2.062-1.178-2.84-.785-.777-1.739-1.166-2.86-1.166-1.122 0-2.076.389-2.861 1.166-.785.778-1.178 1.725-1.178 2.84 0 1.115.393 2.062 1.178 2.84.785.777 1.739 1.166 2.86 1.166Z"
+                                fill="#0D0D0D"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu-overlay" onclick="toggleMenu()"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden transition-opacity duration-300"></div>
+
+    <div id="side-drawer"
+        class="fixed top-0 right-0 w-[80%] md:w-80 h-full bg-white shadow-2xl z-[60] p-6 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-between items-center mb-8 border-b pb-4">
+            <img src="Harmony-Sexual-Wellbeing-RGB.png" class="w-28 md:w-32" alt="Logo" />
+
+            <button onclick="toggleMenu()"
+                class="text-2xl text-gray-500 hover:text-red-600 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="mb-6 px-1">
+            <div class="relative group cursor-pointer" onclick="openSearch()">
+                <input type="text" placeholder="Search here..." readonly
+                    class="w-full bg-gray-100 border border-gray-200 rounded-lg py-2 px-4 focus:outline-none cursor-pointer text-sm" />
+                <i class="fas fa-search absolute right-3 top-2.5 text-gray-400 group-hover:text-brand-red"></i>
+            </div>
+        </div>
+        <ul class="space-y-4 font-serif text-base md:text-lg text-gray-700 overflow-y-auto">
+            <li>
+                <a href="index.html"
+                    class="block text-brand-red font-bold transition-all border-b border-gray-50 pb-2">Home</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">DE</a>
+            </li>
+            <li>
+                <a href="#pe" class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">PE</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Causes</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Diagnosis</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Treatment</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Lifestyle</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Relationships</a>
+            </li>
+            <li>
+                <a href="category-page.html"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Myths</a>
+            </li>
+            <li>
+                <a href="#about" class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">About
+                    Us</a>
+            </li>
+            <li>
+                <a href="#contact"
+                    class="block hover:text-brand-red transition-all border-b border-gray-50 pb-2">Contact</a>
+            </li>
+        </ul>
+
+        <div class="mt-auto border-t pt-6">
+            <p class="text-xs text-gray-400 uppercase font-bold mb-3">Follow Us</p>
+            <div class="flex space-x-4 text-xl text-gray-600">
+                <a href="#" class="hover:text-brand-red"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- header section end -->
+
+    <div class="gradient-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex gap-3 mb-6">
+                <span
+                    class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-bold uppercase tracking-wider">Health
+                    Education</span>
+                <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm">8 Min Read</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight max-w-4xl">
+                Beyond the Silence: Understanding Sexual Health Concerns
+            </h1>
+            <div class="flex items-center gap-4 text-white/80 font-medium">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=100"
+                    class="w-10 h-10 rounded-full border-2 border-white/20" alt="Author">
+                <span>Written by Dr. S. Ahmed</span>
+                <span>•</span>
+                <span>February 15, 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-8">
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+                    <div class="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden  mb-12">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full h-full object-cover" alt="Healthcare Awareness">
+                    </div>
+                    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                        <p
+                            class="text-xl text-gray-900 font-medium mb-10 border-l-4 border-brand-red pl-6 italic bg-red-50/30 py-4 rounded-r-lg">
+                            Silence is not the solution. Many men experience intimacy-related health issues like ED or
+                            PE, but they often remain hidden due to social taboos. These are clinical conditions—not
+                            personal failures—and seeking help is the first step toward a healthier life.
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-brand-red rounded-full"></span>
+                            What is Erectile Dysfunction (ED)?
+                        </h2>
+                        <p class="mb-6">
+                            <span class="font-bold text-brand-red">Erectile Dysfunction</span> (ED) is defined as the
+                            persistent or recurrent inability to achieve or maintain an erection firm enough for
+                            satisfactory sexual performance.
+                        </p>
+                        <p class="mb-8">
+                            It is important to understand that occasional difficulty is normal and can be caused by
+                            fatigue or temporary stress. However, if the issue persists for weeks or months, it may
+                            indicate underlying physical or psychological factors that require medical attention.
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-brand-red rounded-full"></span>
+                            What is Premature Ejaculation (PE)?
+                        </h2>
+                        <p class="mb-6">
+                            <span class="font-bold text-brand-red">Premature Ejaculation</span> (PE) happens when
+                            ejaculation occurs sooner than a man or his partner would like during sexual activity. It
+                            often involves a sense of lack of control, leading to frustration or intimacy anxiety.
+                        </p>
+
+                       
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Debunking Common Myths</h2>
+                        <div class="grid grid-cols-1  gap-6 mb-12">
+                            <div
+                                class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                                <h4 class="font-bold text-brand-red mb-2 text-lg">Myth 1: It's a sign of weakness</h4>
+                                <p class="text-sm leading-relaxed text-gray-600"><strong>Reality:</strong> These are
+                                    medical conditions, often linked to blood flow, hormones, or mental health. They
+                                    have nothing to do with "masculinity" or strength.</p>
+                            </div>
+                            <div
+                                class="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                                <h4 class="font-bold text-brand-red mb-2 text-lg">Myth 2: It's just a part of aging</h4>
+                                <p class="text-sm leading-relaxed text-gray-600"><strong>Reality:</strong> While more
+                                    common as men age, it is not an inevitable part of growing old. Men can enjoy
+                                    healthy intimacy at any age with proper care.</p>
+                            </div>
+                        </div>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-6 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-brand-red rounded-full"></span>
+                            When Should You Consult a Specialist?
+                        </h2>
+                        <p class="mb-6 text-gray-600">Early intervention can prevent further emotional stress and
+                            relationship strain. Consider seeking medical advice if you experience:</p>
+                        <ul class="space-y-4 mb-12">
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-red mt-1"><i class="fas fa-check-circle"></i></span>
+                                <span>Symptoms that persist for more than 4-6 weeks.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-red mt-1"><i class="fas fa-check-circle"></i></span>
+                                <span>Performance anxiety that leads to avoidance of intimacy.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-red mt-1"><i class="fas fa-check-circle"></i></span>
+                                <span>Relationship conflicts stemming from sexual health issues.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-red mt-1"><i class="fas fa-check-circle"></i></span>
+                                <span>You have chronic conditions like Diabetes, Hypertension, or high Stress.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-16 pt-10 border-t border-gray-100 flex gap-6 items-center">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-pink-500 to-blue-500 flex-shrink-0">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Harmony Health Editorial</h4>
+                            <p class="text-gray-500 text-sm">Our team consists of certified medical professionals and
+                                specialized health writers dedicated to providing accessible, science-backed sexual
+                                health information.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-gray-100">
+                        <span class="block text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Share this
+                            article</span>
+                        <div class="flex flex-wrap gap-3">
+                            <button
+                                class="flex items-center gap-2 px-5 py-2.5 bg-[#1877F2] text-white rounded-full text-sm font-bold transition hover:opacity-90"><i
+                                    class="fab fa-facebook"></i> Facebook</button>
+                            <button
+                                class="flex items-center gap-2 px-5 py-2.5 bg-[#1DA1F2] text-white rounded-full text-sm font-bold transition hover:opacity-90"><i
+                                    class="fab fa-twitter"></i> Twitter</button>
+                            <button
+                                class="flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-full text-sm font-bold transition hover:opacity-90"><i
+                                    class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <button
+                                class="flex items-center gap-2 px-5 py-2.5 bg-gray-100 text-gray-600 rounded-full text-sm font-bold transition hover:bg-gray-200"><i
+                                    class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-4">
+                <div class="sticky top-24 space-y-10">
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                            <span class="w-2 h-8 bg-brand-red rounded-full"></span> Related Blogs
+                        </h3>
+                        <div class="space-y-6">
+                            <a href="#" class="group flex gap-4 items-center">
+                                <div class="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=200"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                        alt="Health">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-sm font-bold text-gray-900 leading-snug group-hover:text-brand-red transition">
+                                        5 Daily Habits for Better Hormone Balance</h4>
+                                    <span class="text-[10px] text-gray-400 font-bold uppercase">Wellness</span>
+                                </div>
+                            </a>
+                            <a href="#" class="group flex gap-4 items-center">
+                                <div class="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=200"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                        alt="Nutrition">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-sm font-bold text-gray-900 leading-snug group-hover:text-brand-red transition">
+                                        Top Superfoods to Boost Stamina Naturally</h4>
+                                    <span class="text-[10px] text-gray-400 font-bold uppercase">Nutrition</span>
+                                </div>
+                            </a>
+                            <a href="#" class="group flex gap-4 items-center">
+                                <div class="w-24 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1511688858354-29f6b15119f4?auto=format&fit=crop&w=200&q=80"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                        alt="Fitness">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-sm font-bold text-gray-900 leading-snug group-hover:text-brand-red transition">
+                                        Why Cardiovascular Fitness is Vital for Men</h4>
+                                    <span class="text-[10px] text-gray-400 font-bold uppercase">Fitness</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 text-white rounded-3xl p-8 relative overflow-hidden shadow-xl">
+                        <div class="relative z-10">
+                            <h4 class="text-xl font-bold mb-3">Get Weekly Tips</h4>
+                            <p class="text-gray-400 text-xs mb-6 leading-relaxed">Join 5,000+ others receiving our
+                                expert-backed health insights.</p>
+                            <input type="email" placeholder="Your Email"
+                                class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-2 text-sm mb-3 outline-none focus:border-white/50">
+                            <button
+                                class="w-full gradient-primary py-2.5 rounded-xl font-bold text-sm shadow-lg active:scale-95 transition">Subscribe</button>
+                        </div>
+                        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+
+        <div class="mt-20 text-center">
+            <a href="blog-listing.html"
+                class="inline-flex items-center gap-3 px-10 py-4 bg-gray-100 text-gray-800 rounded-full font-bold hover:bg-gray-200 transition">
+                <i class="fas fa-arrow-left"></i> Back to All Blogs
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-gray-700 pt-16 pb-10 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <img src="Harmony-Sexual-Wellbeing-RGB.png" alt="Harmony Logo" class="w-40">
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-500">
+                        A dedicated platform for evidence-based sexual health awareness, breaking myths, and promoting
+                        wellbeing through expert-backed content.
+                    </p>
+
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300 shadow-sm">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300 shadow-sm">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300 shadow-sm">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white hover:border-black transition-all duration-300 shadow-sm">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase text-xs tracking-[0.2em]">Explore</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-brand-red transition flex items-center gap-2"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-brand-red"></span> Home</a></li>
+                        <li><a href="#blog" class="hover:text-brand-red transition flex items-center gap-2"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-brand-red"></span> Recent Articles</a></li>
+                        <li><a href="#watch" class="hover:text-brand-red transition flex items-center gap-2"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-brand-red"></span> Video Guides</a></li>
+                        <li><a href="#about" class="hover:text-brand-red transition flex items-center gap-2"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-brand-red"></span> Editorial Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase text-xs tracking-[0.2em]">Knowledge Base</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#de" class="hover:text-brand-red transition">Male Health (ED)</a></li>
+                        <li><a href="#pe" class="hover:text-brand-red transition">PE Management</a></li>
+                        <li><a href="#lifestyle" class="hover:text-brand-red transition">Healthy Lifestyle</a></li>
+                        <li><a href="#relationships" class="hover:text-brand-red transition">Relationship Advice</a>
+                        </li>
+                        <li><a href="#faq" class="hover:text-brand-red transition">Medical Myths & FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6 uppercase text-xs tracking-[0.2em]">Join Community</h4>
+                    <p class="text-xs text-gray-500 mb-4 leading-relaxed">Get our latest health insights delivered to
+                        your inbox once a week. No spam, just pure science.</p>
+                    <div class="flex group">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-white border border-gray-200 border-r-0 px-4 py-2 rounded-l-lg text-sm w-full focus:outline-none focus:border-brand-red transition-colors">
+                        <button
+                            class="gradient-primary text-white px-5 py-2 rounded-r-lg hover:shadow-lg transition-all active:scale-95">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold text-center md:text-left">
+                    © 2026 Harmony Health Portal. Educational content only.
+                </div>
+
+                <div class="flex space-x-6 text-[11px] font-bold uppercase tracking-wide">
+                    <a href="#privacy" class="text-gray-400 hover:text-brand-red transition">Privacy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-brand-red transition">Terms</a>
+                    <a href="#disclaimer" class="text-gray-400 hover:text-brand-red transition">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
