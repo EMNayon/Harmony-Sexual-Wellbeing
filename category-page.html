@@ -18,6 +18,25 @@
         .gradient-primary {
             background: linear-gradient(135deg, #FF1A7C 0%, #3B5BDB 100%);
         }
+         .gradient-primary {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+        }
 
         .gradient-secondary {
             background: linear-gradient(135deg, #3B5BDB 0%, #00D4FF 100%);
@@ -512,38 +531,56 @@
     </section>
 
     <!-- Quick Guide Section -->
-    <section class="bg-blue-50 py-16">
+    <section class="bg-blue-50 py-16" id="quick-guide">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-gray-900 mb-12">এই বিভাগ থেকে কী শিখবেন?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 uppercase tracking-tight">What Will You Learn?
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">1️⃣</div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">ED কী?</h3>
-                    <p class="text-gray-700">ED এর সংজ্ঞা, ধরন এবং কত সাধারণ তা জানুন।</p>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100">
+                    <div
+                        class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center text-white font-bold mb-6">
+                        1</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">What is ED?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Understand the definition, different types, and how
+                        common it really is.</p>
                 </div>
 
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">2️⃣</div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">কেন হয়?</h3>
-                    <p class="text-gray-700">শারীরিক এবং মানসিক কারণগুলি আবিষ্কার করুন।</p>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100">
+                    <div
+                        class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center text-white font-bold mb-6">
+                        2</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">Root Causes</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Discover the underlying physical and psychological
+                        factors involved.</p>
                 </div>
 
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">3️⃣</div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">চিকিৎসা</h3>
-                    <p class="text-gray-700">ওষুধ, থেরাপি এবং অন্যান্য চিকিৎসার অপশন।</p>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100">
+                    <div
+                        class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center text-white font-bold mb-6">
+                        3</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">Treatments</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Explore medications, therapeutic options, and
+                        medical procedures available.</p>
                 </div>
 
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">4️⃣</div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">জীবনযাত্রা</h3>
-                    <p class="text-gray-700">দৈনন্দিন পরিবর্তন যা সাহায্য করতে পারে।</p>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100">
+                    <div
+                        class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center text-white font-bold mb-6">
+                        4</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">Lifestyle</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Learn about daily habits and natural changes that
+                        can significantly help.</p>
                 </div>
             </div>
         </div>
     </section>
-<!-- search overlay start -->
+
+    <!-- search overlay start -->
     <div id="search-overlay"
         class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-sm opacity-0 invisible transition-all duration-300 flex flex-col items-center justify-center">
         <button onclick="closeSearch()"
